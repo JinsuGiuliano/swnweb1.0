@@ -8,10 +8,11 @@ import { rootSaga } from './root-saga';
 
 import { rootReducer } from './root-reducer';
 
+
 const persistConfig = {
-  key: 'primary',
+  key: 'root',
   storage,
-  whitelist: ['cart','theme','wishlist']
+  debug: true
 };
 
 const sagaMiddleware = createSagaMiddleware();

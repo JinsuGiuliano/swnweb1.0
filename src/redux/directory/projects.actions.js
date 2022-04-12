@@ -2,9 +2,11 @@ import ProjectActionTypes from './projects.types'
 
 //////////////////
 // FETCH PROJECTS
-export const fetchProjectsStart = () => ({
+export const fetchProjectsStart = () => {
+  console.log('fetchProjectsStart...')
+  return({
   type: ProjectActionTypes.FETCH_PROJECTS_START
-});
+});}
 export const fetchProjectsSuccess = projects => ({
   type: ProjectActionTypes.FETCH_PROJECTS_SUCCESS,
   payload: projects

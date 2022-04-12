@@ -1,10 +1,14 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 import {NavbarNav} from  './menu.styled'
 import * as Icon from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
+
 import StripeCheckoutButton from '../../../payment/stripe-button/stripe-button.component'
+import { changeEditMode } from '../../../../redux/home/home.actions';
 
 const Menu = () => {
+  const dispatch = useDispatch()
     return(
         <header>
         <nav className="navbar navbar-inverse navbar-fixed-top">
@@ -20,6 +24,7 @@ const Menu = () => {
               </Link>
               <a href="#contact" title="" className="btn anchor-link text-dark border-0 px-3">Contact Us</a>
                 <StripeCheckoutButton price={20}/>
+              <button onClick={()=> dispatch(changeEditMode(true))}>Go to Edit Mode</button>
           </NavbarNav>
         </div>
           </div>
