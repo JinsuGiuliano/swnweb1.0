@@ -1,11 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { selectHomeInspiration } from '../../../../redux/home/home.selectors';
-const Inspiration = () => {
+import InspirationEdit from './inpirationEdit.component';
+import { Columns } from '../contact/contact.styles';
+const Inspiration = ({onEdit}) => {
 
     const ourInspiration = useSelector(selectHomeInspiration);
     const {title, middleText, text, imageUrl} = ourInspiration 
     return(
+        <Columns>
         <div className="section-container section-half-background-image-container">
         <div className="image-column" style={{boxShadow: '10px 10px 80px #5b5555',backgroundImage: `url(${imageUrl})`}} />
         <div className="container">
@@ -21,7 +24,11 @@ const Inspiration = () => {
           </div>
         </div>
       </div>
+      {
+        onEdit? <InspirationEdit data={ourInspiration}/>:null
+      }
       
+      </Columns>
     
     )
 }

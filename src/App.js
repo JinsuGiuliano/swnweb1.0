@@ -6,6 +6,7 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { checkUserSession } from './redux/user/user.actions';
 import MainHome from './components/home/sections/main.component';
 import cdnScripts from './assets/scripts/main';
+import scrollScript from './assets/scripts/scroll';
 import { fetchProjectsStart } from './redux/directory/projects.actions';
 //import { fetchValueStart } from './redux/values/values.actions';
 import { fetchHomeStart } from './redux/home/home.actions';
@@ -19,6 +20,7 @@ const App = () => {
   useEffect( () => {
     try{
       cdnScripts();
+      scrollScript();
       // addCollectionAndDocuments('values',values);
       dispatch(fetchProjectsStart())
       dispatch(checkUserSession())

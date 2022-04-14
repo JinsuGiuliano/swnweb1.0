@@ -5,6 +5,5 @@ export const Columns = styled.div`
 	flex: 1 1 auto;
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
-	padding: 50px 50px;      
+	justify-content: space-around;  
 `

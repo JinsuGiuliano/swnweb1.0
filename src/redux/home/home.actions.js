@@ -29,10 +29,32 @@ export const updateHomeFailure = error => ({
   payload: error
 });
 
-
 //////////////////
-// UPDATE Home
+// EDIT MODE
 export const changeEditMode = mode => ({
   type: HomeActionTypes.CHANGE_EDIT_MODE,
   payload: mode
+});
+
+//////////////////
+// UPDATE HOME STATE LOCALLY
+export const updateHero = data => ({
+  type: HomeActionTypes.UPDATE_HERO,
+  payload: data
+});
+export const updateFooter = data => ({
+  type: HomeActionTypes.UPDATE_FOOTER,
+  payload: data
+});
+export const updateContact = data => ({
+  type: HomeActionTypes.UPDATE_CONTACT,
+  payload: data
+});
+export const updateInspiration = data => ({
+  type: HomeActionTypes.UPDATE_INSPIRATION,
+  payload: data
+});
+export const updateValues = data => ({
+  type: HomeActionTypes.UPDATE_VALUES,
+  payload: data
 });

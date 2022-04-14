@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom';
 
 import StripeCheckoutButton from '../../../payment/stripe-button/stripe-button.component'
 import { changeEditMode } from '../../../../redux/home/home.actions';
-
+import { selectHomeOnEdit } from '../../../../redux/home/home.selectors';
 const Menu = () => {
   const dispatch = useDispatch()
+  const onEdit = useSelector(selectHomeOnEdit)
     return(
         <header>
         <nav className="navbar navbar-inverse navbar-fixed-top">
@@ -24,7 +25,13 @@ const Menu = () => {
               </Link>
               <a href="#contact" title="" className="btn anchor-link text-dark border-0 px-3">Contact Us</a>
                 <StripeCheckoutButton price={20}/>
-              <button onClick={()=> dispatch(changeEditMode(true))}>Go to Edit Mode</button>
+                {
+                  onEdit?
+                  <button onClick={()=> dispatch(changeEditMode(false))}>Back to Normal</button>
+                      :
+                  <button onClick={()=> dispatch(changeEditMode(true))}>Go to Edit Mode</button>
+
+                }
           </NavbarNav>
         </div>
           </div>

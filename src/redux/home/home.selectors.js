@@ -24,6 +24,12 @@ export const selectHomeValues = createSelector(
   home => home.data.values
 );
 
+export const selectHomeContact = createSelector(
+  [selectHome],
+  home => home.data.contact
+);
+
+
 export const selectHomeFooter = createSelector(
   [selectHome],
   home => home.data.footer

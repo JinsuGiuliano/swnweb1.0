@@ -1,26 +1,30 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
+import { selectHomeFooter } from '../../../../redux/home/home.selectors';
+import FooterEdit from './footerEdit.component';
+import { Columns } from '../contact/contact.styles';
+const Footer = ({onEdit}) => {
 
-const Footer = () => {
+    const data = useSelector(selectHomeFooter);
+
     return(
+      <Columns styles={{marginTop:'40px'}}>
         <footer className="footer-container white-text-container px-5">
         <div className="container">
           <div className="row px-3">
             <div className="col-md-4">
               <h4>About us</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet consectetur dolor</p>
+              <p>{data.aboutUs}</p>
             </div>
             <div className="col-md-4">
               <h4>Do you like ? Share this !</h4>
               <div>
                 <p>
-                  <a href="https://www.twitter.com" className="fa-icon" title="">
-                    <i className="fa fa-twitter" aria-hidden="true" />
+                  <a href={`${data.instagram}`} className="fa-icon" title="">
+                    <i className="fa fa-instagram" aria-hidden="true" />
                   </a>
-                  <a href="https://www.facebook.com" className="fa-icon" title="">
+                  <a href={`${data.facebook}`} className="fa-icon" title="">
                     <i className="fa fa-facebook" aria-hidden="true" />
-                  </a>
-                  <a href="https://www.linkedin.com" className="fa-icon" title="">
-                    <i className="fa fa-linkedin" aria-hidden="true" />
                   </a>
                 </p>
               </div>
@@ -42,7 +46,10 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      
+      {
+        onEdit?<FooterEdit data={data}/>:null
+      }
+      </Columns>
       
     )
 }

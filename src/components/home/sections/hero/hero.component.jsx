@@ -1,12 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { selectHomeHero } from '../../../../redux/home/home.selectors';
-
-const Hero = () => {
+import HeroEdit from './heroEdit.component';
+import { Columns } from '../contact/contact.styles';
+const Hero = ({onEdit}) => {
 
   const data = useSelector(selectHomeHero);
 
     return(
+      <Columns>
       <div className="background-image-container white-text-container" style={{backgroundImage: `url(${data.imageUrl})`}}>
       <div className="overlay" />
       <div className="container">
@@ -19,7 +21,11 @@ const Hero = () => {
         </div>
       </div>
     </div>
-    
+    {
+      onEdit? <HeroEdit data={data}/>:null
+    }
+   
+    </Columns>
     )
 }
 

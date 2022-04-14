@@ -1,25 +1,37 @@
 import React from 'react'
+import { addResponseMessage } from 'react-chat-widget';
+import { useSelector } from 'react-redux';
+import { selectHomeContact } from '../../../../redux/home/home.selectors';
 import { Columns } from './contact.styles';
-const Contact = () => {
+import ContactEdit from './contactEdit.component';
+const Contact = ({onEdit}) => {
+  const data = useSelector(selectHomeContact)
+  console.log('on edit: ', onEdit)
     return(
-
-      <Columns>
+<div>      
+        <Columns>
                 <div>
                   <img src='assets/images/logo-swn.png' alt='' width={'150px'}  />
                 </div>
                 <div>
                   <h3>Phone</h3>
-                  <p>+ 123 45 67 890</p>
+                  <p>{data.phone}</p>
                   <h3>E-mail</h3>
-                  <p>hello@email.com</p>
+                  <p>{data.email}</p>
                 </div>
                 <div>
                   <h3>Address</h3>
-                  <p>42 rue rouelle 75015, Paris</p>
+                  <p>{data.address}</p>
                   <h3>Open hours</h3>
-                  <p>Mon - Fri : 9AM - 5PM</p>
+                  <p>{data.hours}</p>
                 </div>
+{
+  onEdit?<ContactEdit data={data}/>:null
+}
+        
         </Columns>
+</div>
+
       
     )
 }
