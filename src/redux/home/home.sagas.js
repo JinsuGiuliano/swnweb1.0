@@ -3,10 +3,12 @@ import { firestore } from '../../firebase/firebase.utils'
 import HomeActionTypes from './home.types';
 import {
   fetchHomeSuccess,
-  fetchHomeFailure
+  fetchHomeFailure,
+  updateHomeSuccess,
+  updateHomeFailure
 } from './home.actions'
 
-import { getDoc, doc } from "firebase/firestore";
+import { getDoc, doc, updateDoc } from "firebase/firestore";
 
 
 export function* fetchHomeAsync() {
@@ -22,14 +24,29 @@ export function* fetchHomeAsync() {
   }
 }
 
+export function* updateHomeAsync({payload:newState}) {
+  try {
+    yield console.log('updateHomeAsync running...')
+    const HomeRef = doc(firestore, 'data', 'data')
+    const HomeSnap = yield updateDoc(HomeRef,newState)
+    yield console.log('updateHomeAsync Home...', HomeSnap)
+    yield put(updateHomeSuccess(newState));
+  } catch (error) {
+    yield put(updateHomeFailure(error));
+  }
+}
 
 export function* onFetchHome() {
   yield takeLatest(HomeActionTypes.FETCH_HOME_START, fetchHomeAsync);
 }
 
+export function* onUpdateHome() {
+  yield takeLatest(HomeActionTypes.UPDATE_HOME_START, updateHomeAsync);
+}
 
 export function* homeSagas() {
   yield all([
-    call(onFetchHome)
+    call(onFetchHome),
+    call(onUpdateHome)
   ]);
 }

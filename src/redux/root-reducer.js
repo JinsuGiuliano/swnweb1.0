@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import {userReducer} from './user/user.reducer';
-import {directoryReducer} from './directory/directory.reducer';
+import {projectReducer} from './project/project.reducer';
 import { themeReducer } from './theme/theme.reducer';
 import { valuesReducer } from './values/values.reducer';
 import { homeReducer } from './home/home.reducer';
 
  export const rootReducer = combineReducers({
   user: userReducer,
-  directory: directoryReducer,
+  project: projectReducer,
   theme: themeReducer,
   values: valuesReducer,
   home: homeReducer

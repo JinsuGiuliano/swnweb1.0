@@ -4,15 +4,15 @@ import { useDispatch } from 'react-redux';
 import 'react-chat-widget/lib/styles.css';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import { checkUserSession } from './redux/user/user.actions';
-import MainHome from './components/home/sections/main.component';
+import MainHome from './components/home/main.component';
 import cdnScripts from './assets/scripts/main';
 import scrollScript from './assets/scripts/scroll';
-import { fetchProjectsStart } from './redux/directory/projects.actions';
+import { fetchProjectsStart } from './redux/project/project.actions';
 //import { fetchValueStart } from './redux/values/values.actions';
 import { fetchHomeStart } from './redux/home/home.actions';
 //import { addCollectionAndDocuments } from './firebase/firebase.utils';
 //import { selectValuesValues } from './redux/values/values.selectors'
-//import SECTIONS_DATA from './redux/directory/SECTIONS_DATA'
+//import SECTIONS_DATA from './redux/project/SECTIONS_DATA'
 
 const App = () => {
   const dispatch = useDispatch();

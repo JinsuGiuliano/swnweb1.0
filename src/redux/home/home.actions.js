@@ -16,13 +16,13 @@ export const fetchHomeFailure = error => ({
 
 //////////////////
 // UPDATE Home
-export const updateHomeStart = (oldProject, newProject) => ({
+export const updateHomeStart = newState => ({
   type: HomeActionTypes.UPDATE_HOME_START,
-  payload: {oldProject, newProject}
+  payload: newState
 });
-export const updateHomeSuccess = Home => ({
+export const updateHomeSuccess = newState => ({
   type: HomeActionTypes.UPDATE_HOME_SUCCESS,
-  payload: Home
+  payload: newState
 });
 export const updateHomeFailure = error => ({
   type: HomeActionTypes.UPDATE_HOME_FAILURE,
@@ -34,27 +34,4 @@ export const updateHomeFailure = error => ({
 export const changeEditMode = mode => ({
   type: HomeActionTypes.CHANGE_EDIT_MODE,
   payload: mode
-});
-
-//////////////////
-// UPDATE HOME STATE LOCALLY
-export const updateHero = data => ({
-  type: HomeActionTypes.UPDATE_HERO,
-  payload: data
-});
-export const updateFooter = data => ({
-  type: HomeActionTypes.UPDATE_FOOTER,
-  payload: data
-});
-export const updateContact = data => ({
-  type: HomeActionTypes.UPDATE_CONTACT,
-  payload: data
-});
-export const updateInspiration = data => ({
-  type: HomeActionTypes.UPDATE_INSPIRATION,
-  payload: data
-});
-export const updateValues = data => ({
-  type: HomeActionTypes.UPDATE_VALUES,
-  payload: data
 });

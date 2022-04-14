@@ -22,7 +22,8 @@ export const homeReducer = (state = INITIAL_STATE, action) => {
     case HomeActionTypes.UPDATE_HOME_SUCCESS:
         return {
           ...state,
-          message:payload
+          data: payload,
+          message:'Home page Updated Successfully!'
         }
     case HomeActionTypes.CHANGE_EDIT_MODE:
       return {
