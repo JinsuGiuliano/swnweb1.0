@@ -39,7 +39,6 @@ const MisionVisionEdit = ({values}) => {
                 values.map((el, idx)=>( 
                   <div key={idx}>
                       <h3>{el.title.toUpperCase()}</h3>
-                      <h5>TEXT</h5>
                       <FormInput
                         name='text'
                         title={el.title}
@@ -49,7 +48,6 @@ const MisionVisionEdit = ({values}) => {
                         label='text'
                         required
                       />
-                      <h5>IMAGE</h5>
                       <FormInput
                         name='image'
                         title={el.title}

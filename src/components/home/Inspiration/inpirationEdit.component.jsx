@@ -47,7 +47,6 @@ const InspirationEdit = ({data}) => {
 
                 <h2>Inspiration</h2>
                 <div>
-                <h3>Title</h3>
                   <FormInput
                     name='title'
                     type='text'
@@ -58,7 +57,6 @@ const InspirationEdit = ({data}) => {
                   />
                   </div>
                   <div>
-                  <h3>Text</h3>
                   <FormInput
                     name='text'
                     type='textarea'
@@ -69,7 +67,6 @@ const InspirationEdit = ({data}) => {
                   />
                   </div>
                   <div>
-                  <h3>Image Url</h3>
                   <FormInput
                     name='imageUrl'
                     type='text'

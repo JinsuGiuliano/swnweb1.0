@@ -47,7 +47,6 @@ const ContactEdit = ({data}) => {
 
                 <h2>Contact</h2>
                 <div>
-                <h3>Phone</h3>
                   <FormInput
                     name='phone'
                     type='text'
@@ -58,7 +57,6 @@ const ContactEdit = ({data}) => {
                   />
                   </div>
                   <div>
-                  <h3>E-mail</h3>
                   <FormInput
                     name='email'
                     type='text'
@@ -69,7 +67,6 @@ const ContactEdit = ({data}) => {
                   />
                   </div>
                   <div>
-                  <h3>Address</h3>
                   <FormInput
                     name='address'
                     type='text'
@@ -80,7 +77,6 @@ const ContactEdit = ({data}) => {
                   />
                   </div>
                   <div>
-                <h3>Open hours</h3>
                 <FormInput
                   name='hours'
                   type='text'

@@ -15,7 +15,7 @@ const Hero = ({onEdit}) => {
         <div className="row">
           <div className="col-xs-12">
             <h1 style={{textShadow: '5px 5px 60px #000'}} >{data.title}</h1>
-            <p>{data.subTitle}</p>
+            <p>{data.subtitle}</p>
             <a href="#contact-section-container" className="btn btn-primary btn-lg anchor-link shadow" title="">Get in touch</a>
           </div>
         </div>

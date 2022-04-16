@@ -4,5 +4,10 @@ const selectProject = state => state.project;
 
 export const selectProjectSections = createSelector(
   [selectProject],
-  project => project.sections
+  project => project.projects
+);
+
+export const selectProjectLength = createSelector(
+  [selectProject],
+  project => project.projects.length
 );

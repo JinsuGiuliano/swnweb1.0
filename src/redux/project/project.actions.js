@@ -19,23 +19,23 @@ export const fetchProjectsFailure = error => ({
 //////////////////
 // CREATE PROJECT
 export const createProjectStart = project => ({
-    type: ProjectActionTypes.DELETE_PROJECT_START,
+    type: ProjectActionTypes.CREATE_PROJECT_START,
     payload: project
   });
   export const createProjectSuccess = projects => ({
-    type: ProjectActionTypes.DELETE_PROJECT_SUCCESS,
+    type: ProjectActionTypes.CREATE_PROJECT_SUCCESS,
     payload: projects
   });
   export const createProjectFailure = error => ({
-    type: ProjectActionTypes.FETCH_PROJECTS_FAILURE,
+    type: ProjectActionTypes.CREATE_PROJECT_FAILURE,
     payload: error
   });
 
 //////////////////
 // UPDATE PROJECTS
-export const updateProjectStart = (oldProject, newProject) => ({
+export const updateProjectStart = (project, projects) => ({
   type: ProjectActionTypes.UPDATE_PROJECT_START,
-  payload: {oldProject, newProject}
+  payload: {project, projects}
 });
 export const updateProjectSuccess = projects => ({
   type: ProjectActionTypes.UPDATE_PROJECT_SUCCESS,
@@ -48,9 +48,9 @@ export const updateProjectFailure = error => ({
 
 //////////////////
 // DELETE PROJECTS
-export const deleteProjectStart = project => ({
+export const deleteProjectStart =  (project, projects) => ({
     type: ProjectActionTypes.DELETE_PROJECT_START,
-    payload: project
+    payload: {project, projects}
   });
   
   export const deleteProjectSuccess = projects => ({

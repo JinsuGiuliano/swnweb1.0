@@ -48,7 +48,6 @@ const HeroEdit = ({data}) => {
 
                 <h2>Hero</h2>
               <div>
-                <h3>Title</h3>
                   <FormInput
                     name='title'
                     type='textarea'
@@ -59,9 +58,8 @@ const HeroEdit = ({data}) => {
                   />
                 </div>
                 <div>
-                  <h3>SubTitle</h3>
                   <FormInput
-                    name='subtotal'
+                    name='subTitle'
                     type='text'
                     value={heroData.subTitle}
                     handleChange={handleChange}
@@ -70,7 +68,6 @@ const HeroEdit = ({data}) => {
                   />
                   </div>
                   <div>
-                  <h3>Image Url</h3>
                   <FormInput
                     name='imageUrl'
                     type='text'

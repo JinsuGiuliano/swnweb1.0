@@ -45,7 +45,6 @@ const FooterEdit = ({data}) => {
       <form onSubmit={handleSubmit}  style={{display:'flex',flexDirection:'row',alignItems:'stretch', justifyContent:'space-around'}}> 
               <h2>Footer</h2>
                 <div>
-                <h3>About</h3>
                   <FormInput
                     name='aboutUs'
                     type='text'
@@ -56,7 +55,6 @@ const FooterEdit = ({data}) => {
                   />
                   </div>
                   <div>
-                  <h4>FaceBook</h4>
                   <FormInput
                     name='facebook'
                     type='text'
@@ -67,7 +65,6 @@ const FooterEdit = ({data}) => {
                   />
                   </div>
                   <div>
-                  <h4>Instagram</h4>
                   <FormInput
                     name='instagram'
                     type='text'

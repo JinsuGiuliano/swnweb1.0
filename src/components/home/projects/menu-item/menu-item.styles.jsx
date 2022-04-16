@@ -77,3 +77,10 @@ export const EditIcon = styled(EditIconSVG)`
       fill: ${({color}) => color };
     }
 `;
+
+
+export const EditContentContainer = styled.div`
+  height: 100px;
+  padding: 50 5px;
+  margin: 50 5px;
+`;
