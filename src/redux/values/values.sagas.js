@@ -3,19 +3,10 @@ import { firestore } from '../../firebase/firebase.utils'
 import ValuesActionTypes from './values.types';
 import {
   fetchValuesSuccess,
-  fetchValuesFailure,
-  // updateValuestart,
-  // updateValuesuccess,
-  // updateProjectFailure,
-  // deleteValuestart,
-  // deleteValuesuccess,
-  // deleteProjectFailure,
-  // createValuestart,
-  // createValuesuccess,
-  // createProjectFailure
+  fetchValuesFailure
 } from './values.actions'
 
-import { getDoc, doc, collection, updateDoc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 
 export function* fetchValuesAsync() {

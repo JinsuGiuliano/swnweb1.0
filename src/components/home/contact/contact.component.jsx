@@ -1,5 +1,4 @@
 import React from 'react'
-import { addResponseMessage } from 'react-chat-widget';
 import { useSelector } from 'react-redux';
 import { selectHomeContact } from '../../../redux/home/home.selectors';
 import { Columns } from './contact.styles';

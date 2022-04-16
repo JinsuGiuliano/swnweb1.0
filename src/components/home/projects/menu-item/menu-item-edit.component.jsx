@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Col } from "react-awesome-styled-grid";
 import { updateProjectStart, deleteProjectStart } from '../../../../redux/project/project.actions';
 import { selectProjectSections } from '../../../../redux/project/project.selectors';
 
