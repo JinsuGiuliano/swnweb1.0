@@ -1,6 +1,6 @@
 import ProjectActionTypes from "./project.types";
 const INITIAL_STATE = {
-  projects: [],
+  projects:[],
   message:''
 };
 
@@ -17,10 +17,6 @@ export const projectReducer = (state = INITIAL_STATE, action) => {
       }
 
     case ProjectActionTypes.CREATE_PROJECT_SUCCESS:
-      state.projects.push(payload)
-      return {
-        ...state
-      }
     case ProjectActionTypes.FETCH_PROJECTS_SUCCESS:
     case ProjectActionTypes.UPDATE_PROJECT_SUCCESS:
     case ProjectActionTypes.DELETE_PROJECT_SUCCESS:

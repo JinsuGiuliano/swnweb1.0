@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-import { createProjectStart } from '../../../../redux/project/project.actions';
-import { selectProjectLength } from '../../../../redux/project/project.selectors';
+import { updateProjectStart } from '../../../../redux/project/project.actions';
+import { selectProjectSections } from '../../../../redux/project/project.selectors';
 
 import CustomButton from '../../../utils/custom-button/custom-button.component';
 import FormInput from '../../../utils/form-input/form-input.component';
@@ -18,10 +18,9 @@ const NewProject = () => {
      text: '',
      title: ''
   }
-
   const [ projectData, setprojectData ] = useState(projectNew)
   const dispatch = useDispatch();
-  const index = useSelector(selectProjectLength) + 1
+  const projects = useSelector(selectProjectSections);
 
   const handleChange = event => {
     const { value , name } = event.target;
@@ -33,11 +32,15 @@ const NewProject = () => {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    console.log('New Project: ', projectData)
-    dispatch(createProjectStart({...projectData, id: index }))
+
+    projects.push({...projectData, gallery: projectData.gallery.split(','), size:'large'})
+    dispatch(updateProjectStart(projects))
+
   }
     return(
-      <div>
+      <div  style={{
+        heigh:'500px'
+      }} >
       <h3> CREATE A NEW PROJECT </h3>
       <form onSubmit={handleSubmit} style={{
             padding:'0 5px',
@@ -86,17 +89,9 @@ const NewProject = () => {
                   type='text'
                   handleChange={handleChange}   
                   value={projectData.gallery}
-                  label='Image Gallery(URLs separated by `,`)'
+                  label='Images URLs % by `,`'
                   style={{minWidth:'50%'}}
                   required
-                />
-                <FormInput
-                  name='size'
-                  type='text'
-                  handleChange={handleChange}   
-                  value={projectData.size}
-                  style={{minWidth:'50%'}}
-                  label='Main Image Size(large or small)'
                 />
               </div>
               <div  style={{

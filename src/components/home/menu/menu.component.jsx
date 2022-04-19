@@ -19,7 +19,7 @@ const Menu = () => {
                   />
               </Link>
               <a href="#contact" title="" className="btn anchor-link text-dark border-0 px-3">Contact Us</a>
-             
+              <StripeCheckoutButton price={20}/>
           </NavbarNav>
         </div>
           </div>

@@ -16,7 +16,7 @@ const MenuItem = ({ title, imageUrl, size, gallery, id }) => {
   const navigate = useNavigate();
 
   const onNavigateHandler = () => navigate('/');
-
+  console.log({ title, imageUrl, size, gallery, id })
   return(
           <MenuItemContainer
             size={size}
@@ -31,7 +31,7 @@ const MenuItem = ({ title, imageUrl, size, gallery, id }) => {
               </ContentContainer>
               {
                 gallery &&
-                gallery.forEach((el,idx) => 
+                gallery.map((el,idx) => 
                   (
                     <a key={idx} href={el} data-lightbox={`gallery-mf-${id}`}></a>
                   ))

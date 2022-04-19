@@ -5,9 +5,8 @@ import { Columns } from './contact.styles';
 import ContactEdit from './contactEdit.component';
 const Contact = ({onEdit}) => {
   const data = useSelector(selectHomeContact)
-  console.log('on edit: ', onEdit)
     return(
-<div>      
+    <div>      
         <Columns>
                 <div>
                   <img src='assets/images/logo-swn.png' alt='' width={'150px'}  />

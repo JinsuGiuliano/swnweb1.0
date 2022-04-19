@@ -10,19 +10,23 @@ import { ProjectMenuContainer, MainProjectMenuContainer } from './projects.style
 
 const Project = ({onEdit}) => {
   const projects = useSelector(selectProjectSections);
-
+  console.log('projects: ',projects)
   return(
     <MainProjectMenuContainer>
     {
       onEdit? <ProjectsOnEdit projects={projects}/> : null
     }
     <h2 className="text-center">Projecten Gallery</h2>
-        <ProjectMenuContainer>
+        <ProjectMenuContainer >
+        
         {
           projects &&
           projects.map(({gallery, id, ...otherSectionProps }) => (
             <MenuItem key={id} {...otherSectionProps} id={id} gallery={gallery}/>
           ))
+        }
+        {
+          !projects &&  <div style={{height:'400px'}}><h3 > No projects yet...</h3></div>
         }
       </ProjectMenuContainer>
     </MainProjectMenuContainer>

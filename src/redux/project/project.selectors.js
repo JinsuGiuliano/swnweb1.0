@@ -7,7 +7,4 @@ export const selectProjectSections = createSelector(
   project => project.projects
 );
 
-export const selectProjectLength = createSelector(
-  [selectProject],
-  project => project.projects.length
-);
+

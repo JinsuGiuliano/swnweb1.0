@@ -5,7 +5,7 @@ import { selectProjectSections } from '../../../../redux/project/project.selecto
 
 import CustomButton from '../../../utils/custom-button/custom-button.component';
 import FormInput from '../../../utils/form-input/form-input.component';
-
+import { CarouselItem } from '../carrousel/carousel';
 
 const MenuItemEdit = ({data}) => {
 
@@ -24,9 +24,13 @@ const MenuItemEdit = ({data}) => {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    dispatch(updateProjectStart(projectData, projects))
+ 
+    projects.push({...projectData,size:'large'})
+    dispatch(updateProjectStart(projects))
+  
   }
     return(
+      <CarouselItem>
         <form onSubmit={handleSubmit} style={{
             padding:'0 5px',
             display:'flex',
@@ -72,25 +76,17 @@ const MenuItemEdit = ({data}) => {
                 type='text'
                 handleChange={handleChange}   
                 value={projectData.imageUrl}
-                label='Main image(url)'
+                label='Image url'
                 required
               />
               <FormInput
                 name='gallery'
                 type='text'
                 handleChange={handleChange}   
-                value={projectData.gallery}
-                label='Image Gallery(URLs separated by `,`)'
+                value={projectData.gallery.join(',')}
+                label='Images urls % by `,`'
                 style={{minWidth:'50%'}}
                 required
-              />
-              <FormInput
-                name='size'
-                type='text'
-                handleChange={handleChange}   
-                value={projectData.size}
-                style={{minWidth:'50%'}}
-                label='Main Image Size(large or small)'
               />
             </div> 
             </div>  
@@ -103,6 +99,7 @@ const MenuItemEdit = ({data}) => {
             </div>  
                  
         </form>
+        </CarouselItem>
     )
 }
 

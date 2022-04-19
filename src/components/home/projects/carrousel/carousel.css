@@ -1,0 +1,20 @@
+.carosusel {
+    overflow: hidden;
+}
+
+.inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+}
+
+.carousel-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.indicators {
+    display: flex;
+    justify-content: center;
+}
