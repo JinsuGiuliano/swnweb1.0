@@ -33,7 +33,7 @@ const App = () => {
     return(
         <Routes>
             <Route index element={<MainHome />} />
-            <Route path='signin' element={<SignInAndSignUpPage />} />
+            <Route path='/signin' element={<SignInAndSignUpPage />} />
         </Routes>
     );
   }

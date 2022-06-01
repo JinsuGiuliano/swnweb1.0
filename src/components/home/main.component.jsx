@@ -15,8 +15,9 @@ import ErrorBoundary from '../../ErrorBoundary'
 
 import { changeEditMode } from '../../redux/home/home.actions';
 const MainHome = ()=> {
-  const dispatch = useDispatch()
-  const onEdit = useSelector(selectHomeOnEdit)
+      const dispatch = useDispatch()
+      const onEdit = useSelector(selectHomeOnEdit)
+
         return(
         <ErrorBoundary>  
           <div>
@@ -34,15 +35,6 @@ const MainHome = ()=> {
               <Projects onEdit={onEdit}/>
               <Contact onEdit={onEdit}/>
               <Footer onEdit={onEdit}/>
-              <FloatingWhatsApp
-                phoneNumber="123456789"
-                avatar='assets/images/logo-swn.png'
-                accountName="SWN"
-                allowClickAway
-                notification
-                notificationDelay={60000} // 1 minute
-                styles={{zIndex:'99999999'}}
-              />
           </div>
         </ErrorBoundary>
         );

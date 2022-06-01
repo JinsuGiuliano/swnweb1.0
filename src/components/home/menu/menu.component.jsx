@@ -19,6 +19,11 @@ const Menu = () => {
                   />
               </Link>
               <a href="#contact" title="" className="btn anchor-link text-dark border-0 px-3">Contact Us</a>
+              <a href="https://firebasestorage.googleapis.com/v0/b/swn-web.appspot.com/o/AnnualReport.pdf?alt=media&token=49bb519b-618b-4d4a-bfcc-4cd1160af264"  
+              target="blank"
+              title="" 
+              className="btn anchor-link text-dark border-0 px-3">Our Balance</a>
+                  
               <StripeCheckoutButton price={20}/>
           </NavbarNav>
         </div>

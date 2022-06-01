@@ -21,8 +21,8 @@ const Project = ({onEdit}) => {
         
         {
           projects &&
-          projects.map(({gallery, id, ...otherSectionProps }) => (
-            <MenuItem key={id} {...otherSectionProps} id={id} gallery={gallery}/>
+          projects.map(({gallery, id, ...otherSectionProps }, idx) => (
+            <MenuItem key={idx} {...otherSectionProps} id={id} gallery={gallery}/>
           ))
         }
         {
