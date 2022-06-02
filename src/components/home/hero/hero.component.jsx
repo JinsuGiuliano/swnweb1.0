@@ -13,14 +13,13 @@ const Hero = ({onEdit}) => {
       {
         data && 
             <Columns>
-            <div className="background-image-container white-text-container" style={{backgroundImage: `url(${data.imageUrl})`}}>
+            <div className="background-image-container white-text-container" style={{backgroundImage: `url(${data.imageUrl})`,height:'600px', width: '100%',padding:'20px'}}>
             <div className="overlay" />
             <div className="container">
               <div className="row">
                 <div className="col-xs-12">
-                  <h1 style={{textShadow: '5px 5px 60px #000'}} >{data.title}</h1>
-                  <p>{data.subtitle}</p>
-                  <a href="#contact-section-container" className="btn btn-primary btn-lg anchor-link shadow" title="">Get in touch</a>
+                  <h1 style={{textShadow: '5px 5px 30px #000', fontSize: '60px'}} >{data.subTitle}</h1>
+                  <p style={{textShadow: '5px 5px 30px #000', fontSize: '30px'}}>{data.title}</p>
                 </div>
               </div>
             </div>
