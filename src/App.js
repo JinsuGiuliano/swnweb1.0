@@ -29,7 +29,7 @@ const App = () => {
       console.log(err)
     }
   
-  });
+  },[]);
     return(
         <Routes>
             <Route index element={<MainHome />} />
