@@ -10,4 +10,5 @@ export const ProjectMenuContainer = styled.div`
 
 export const MainProjectMenuContainer = styled.div`
   padding: 100px 0px 0px;
+  height: 100%;
 `;
