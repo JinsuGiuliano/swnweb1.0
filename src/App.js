@@ -17,17 +17,12 @@ const App = () => {
   const dispatch = useDispatch();
  //const values = useSelector(selectValuesValues);
   useEffect( () => {
-    try{
       cdnScripts();
       scrollScript();
+      dispatch(checkUserSession())
       // addCollectionAndDocuments('values',values);
       dispatch(fetchProjectsStart())
-      dispatch(checkUserSession())
       dispatch(fetchHomeStart())
-    }catch(err){
-      console.log(err)
-    }
-  
   },[]);
     return(
         <Routes>

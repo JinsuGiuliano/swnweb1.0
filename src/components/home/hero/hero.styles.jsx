@@ -27,6 +27,9 @@ export const MenuItemContainer = styled.div`
   &:last-child {
     margin-left: 7.5px;
   }
+  @media (max-width: 800px) { 
+    width:100%;
+   }
 `;
 
 export const DirectoryMenuContainer = styled.div`

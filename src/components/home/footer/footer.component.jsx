@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux';
 import { selectHomeFooter } from '../../../redux/home/home.selectors';
@@ -14,6 +14,9 @@ const Footer = ({onEdit}) => {
     const data = useSelector(selectHomeFooter);
 
     return(
+      <Fragment>
+      {
+        data &&
       <Columns styles={{marginTop:'40px',width:'100%'}}>
         <footer className="footer-container white-text-container ">
         <div className="container">
@@ -34,9 +37,6 @@ const Footer = ({onEdit}) => {
                   </a>
                 </p>
               </div>
-              <div>
-                <p><small>© Untitled | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></small></p>
-              </div>
             </div>
             <div className="col-md-4">
               <h4>Subscribe to newsletter</h4>
@@ -56,6 +56,9 @@ const Footer = ({onEdit}) => {
         onEdit?<FooterEdit data={data}/>:null
       }
       </Columns>
+    
+    }
+    </Fragment>
       
     )
 }

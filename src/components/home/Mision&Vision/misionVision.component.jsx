@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import { selectHomeValues } from '../../../redux/home/home.selectors';
 
@@ -12,22 +12,27 @@ const MisionVision = ({onEdit}) => {
 
 console.log('ourValues: ', ourValues)
   return(
-    <Columns>
-    <MainProjectMenuContainer>
-    <h2 className="text-center">Over Ons</h2>
-        <ProjectMenuContainer>
-        {   ourValues &&
-            ourValues.map((el, idx) => (
-            <ValueItem key={idx} {...el} />
-          ))
-        }
-      </ProjectMenuContainer>
-    </MainProjectMenuContainer>
+    <Fragment>
     {
-      onEdit? <MisionVisionEdit values={ourValues}/>:null
+      ourValues &&
+      <Columns>
+        <MainProjectMenuContainer>
+        <h2 className="text-center">Over Ons</h2>
+            <ProjectMenuContainer>
+            {   ourValues &&
+                ourValues.map((el, idx) => (
+                <ValueItem key={idx} {...el} />
+              ))
+            }
+          </ProjectMenuContainer>
+        </MainProjectMenuContainer>
+        {
+          onEdit? <MisionVisionEdit values={ourValues}/>:null
+        }
+        
+      </Columns>
     }
-    
-    </Columns>
+    </Fragment>
 )}
 
 
