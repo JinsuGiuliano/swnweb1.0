@@ -14,8 +14,10 @@ import './styles.scss'
 import ErrorBoundary from '../../ErrorBoundary'
 
 import { changeEditMode } from '../../redux/home/home.actions';
+
+// <Footer onEdit={onEdit}/>
 const MainHome = ()=> {
-  
+
       const dispatch = useDispatch()
       const onEdit = useSelector(selectHomeOnEdit)
 
@@ -35,7 +37,7 @@ const MainHome = ()=> {
               <Inspiration onEdit={onEdit}/>
               <Projects onEdit={onEdit}/>
               <Contact onEdit={onEdit}/>
-              <Footer onEdit={onEdit}/>
+              
           </div>
         </ErrorBoundary>
         );

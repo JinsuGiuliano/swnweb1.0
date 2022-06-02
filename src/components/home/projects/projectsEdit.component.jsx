@@ -7,7 +7,7 @@ import NewProject from './menu-item/newProject.component';
 import Carousel from './carrousel/carousel';
 
 const Column = styled.div`
-  position: absolute;
+  position: relative;
   background-color: white;
   min-width: 20%;
   z-index:999999999999;
@@ -16,7 +16,7 @@ const Column = styled.div`
 
 const ProjectsOnEdit = ({projects}) => {
     const [create, setCreate] = useState(false)
-  console.log('projects',projects)
+    
     return(
       <Column className='will-fadeIn'>
         <div  style={{

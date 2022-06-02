@@ -3,8 +3,10 @@ import {NavbarNav} from  './menu.styled'
 import * as Icon from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 
-import StripeCheckoutButton from '../../payment/stripe-button/stripe-button.component'
+// import StripeCheckoutButton from '../../payment/stripe-button/stripe-button.component'
+// <StripeCheckoutButton price={20}/>
 const Menu = () => {
+
     return(
         <header>
         <nav className="navbar navbar-inverse navbar-fixed-top">
@@ -24,7 +26,7 @@ const Menu = () => {
               title="" 
               className="btn anchor-link text-dark border-0 px-3">Our Balance</a>
                   
-              <StripeCheckoutButton price={20}/>
+             
           </NavbarNav>
         </div>
           </div>

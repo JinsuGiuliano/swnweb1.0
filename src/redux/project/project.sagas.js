@@ -44,9 +44,10 @@ export function* deleteProjectAsync({payload:{project, projects}}) {
     yield console.log('deleteProjectAsync running...')
     const OldprojectRef = doc(firestore, 'data', 'projects')
     yield deleteDoc(OldprojectRef)
-    const projectRef = doc(firestore, 'data', 'projects')
-    yield setDoc(projectRef, {projects})
     const projectsFiltered = projects.filter(el => el.id !== project.id);
+    const projectRef = doc(firestore, 'data', 'projects')
+    yield setDoc(projectRef, {projectsFiltered})
+    
     yield put(deleteProjectSuccess(projectsFiltered));
   } catch (error) {
     yield put(deleteProjectFailure(error));
