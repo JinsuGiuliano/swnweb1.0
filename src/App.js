@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import 'react-chat-widget/lib/styles.css';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import { checkUserSession } from './redux/user/user.actions';
 import MainHome from './components/home/main.component';
