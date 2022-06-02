@@ -9,8 +9,9 @@ import ProjectsOnEdit from './projectsEdit.component';
 import { ProjectMenuContainer, MainProjectMenuContainer } from './projects.styles';
 
 const Project = ({onEdit}) => {
+  
   const projects = useSelector(selectProjectSections);
-  console.log('projects: ',projects)
+  
   return(
     <MainProjectMenuContainer>
     {

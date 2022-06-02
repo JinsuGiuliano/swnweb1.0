@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   MenuItemContainer,
@@ -8,24 +8,28 @@ import {
   ContentSubtitle
 } from './values.styles';
 
-const ValueItem = ({ title, imageUrl, text }) => {
-
+const ValueItem = ({ data }) => {
   const navigate = useNavigate();
 
   const onNavigateHandler = () => navigate('/');
   return(
-  <MenuItemContainer
-    onClick={onNavigateHandler}
-  >
-    <BackgroundImageContainer
-      className='background-image'
-      imageUrl={imageUrl}
-    />
-    <ContentContainer className='content'>
-    <ContentTitle>{title.toUpperCase()}</ContentTitle>
-    </ContentContainer>
-    <ContentSubtitle>{text}</ContentSubtitle>
-  </MenuItemContainer>
+    <Fragment>
+    {
+      data &&
+      <MenuItemContainer
+        onClick={onNavigateHandler}
+      >
+        <BackgroundImageContainer
+          className='background-image'
+          imageUrl={data.imageUrl}
+        />
+        <ContentContainer className='content'>
+        <ContentTitle>{data.title.toUpperCase()}</ContentTitle>
+        </ContentContainer>
+        <ContentSubtitle>{data.text}</ContentSubtitle>
+      </MenuItemContainer>
+    }
+  </Fragment>
 )}
 
 export default ValueItem;

@@ -8,20 +8,20 @@ import { Columns } from '../contact/contact.styles';
 import { ProjectMenuContainer, MainProjectMenuContainer } from '../projects/projects.styles';
 
 const MisionVision = ({onEdit}) => {
+
   const ourValues = useSelector(selectHomeValues)
 
-console.log('ourValues: ', ourValues)
   return(
     <Fragment>
     {
-      ourValues &&
+      ourValues.length > 0 || ourValues !== undefined &&
       <Columns>
         <MainProjectMenuContainer>
         <h2 className="text-center">Over Ons</h2>
             <ProjectMenuContainer>
-            {   ourValues &&
+            {   console.log(ourValues) &&
                 ourValues.map((el, idx) => (
-                <ValueItem key={idx} {...el} />
+                <ValueItem key={idx} data={el}/>
               ))
             }
           </ProjectMenuContainer>

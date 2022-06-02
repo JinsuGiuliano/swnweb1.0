@@ -27,9 +27,9 @@
     margin-top: 30px;
 }
 
-/* .section-container{
-    padding: px !important;
-} */
+.section-container{
+        padding: 80px 0;
+}
 
 .verticalText{
     visibility: visible;  -webkit-transform: translateY(0) scale(1); 
@@ -48,4 +48,8 @@ svg:not(:root) {
 .row {
     margin-left: -40px !important;
     margin-right: -40px !important;
+}
+
+.section-half-background-image-container .image-column{
+    margin: 80px 0px;
 }

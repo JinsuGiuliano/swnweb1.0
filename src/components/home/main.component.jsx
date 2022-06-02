@@ -15,6 +15,7 @@ import ErrorBoundary from '../../ErrorBoundary'
 
 import { changeEditMode } from '../../redux/home/home.actions';
 const MainHome = ()=> {
+  
       const dispatch = useDispatch()
       const onEdit = useSelector(selectHomeOnEdit)
 
