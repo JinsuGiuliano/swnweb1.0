@@ -21,7 +21,7 @@ export const selectHomeInspiration = createSelector(
 
 export const selectHomeValues = createSelector(
   [selectHome],
-  home => {console.log(home);return(home.data.values)}
+  home => home.data.values
 );
 
 export const selectHomeContact = createSelector(

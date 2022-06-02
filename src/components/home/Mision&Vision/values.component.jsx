@@ -9,9 +9,10 @@ import {
 } from './values.styles';
 
 const ValueItem = ({ data }) => {
+  
   const navigate = useNavigate();
-
   const onNavigateHandler = () => navigate('/');
+
   return(
     <Fragment>
     {

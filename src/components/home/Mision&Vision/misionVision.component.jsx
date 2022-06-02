@@ -7,19 +7,18 @@ import MisionVisionEdit from './misionVisionEdit.component';
 import { Columns } from '../contact/contact.styles';
 import { ProjectMenuContainer, MainProjectMenuContainer } from '../projects/projects.styles';
 
-const MisionVision = ({onEdit}) => {
+const MisionVision = ({onEdit, ourValues}) => {
 
-  const ourValues = useSelector(selectHomeValues)
-
+ 
   return(
     <Fragment>
     {
-      ourValues.length > 0 || ourValues !== undefined &&
+      ourValues.length &&
       <Columns>
         <MainProjectMenuContainer>
         <h2 className="text-center">Over Ons</h2>
             <ProjectMenuContainer>
-            {   console.log(ourValues) &&
+            {   
                 ourValues.map((el, idx) => (
                 <ValueItem key={idx} data={el}/>
               ))

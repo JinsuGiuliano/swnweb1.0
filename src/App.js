@@ -18,10 +18,9 @@ const App = () => {
  //const values = useSelector(selectValuesValues);
   useEffect( () => {
       dispatch(checkUserSession())
-      // addCollectionAndDocuments('values',values);
+      // // addCollectionAndDocuments('values',values);
       dispatch(fetchProjectsStart())
       dispatch(fetchHomeStart())
-
       cdnScripts();
       scrollScript();
   },[]);

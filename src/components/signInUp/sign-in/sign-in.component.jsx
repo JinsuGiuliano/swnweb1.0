@@ -15,60 +15,63 @@ import {
   ButtonsBarContainer
 } from './sign-in.styles';
 import { selectCurrentUser } from '../../../redux/user/user.selectors';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { connectFirestoreEmulator } from 'firebase/firestore';
+import { CodeSlash } from 'react-bootstrap-icons';
 
 const SignIn = () =>  {
  
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const currentUser = useSelector(selectCurrentUser)
   const state = {
-    email: '',
-    password: ''
+    email:'',
+    password:''
   }
-  const [signin, setSignin] = useState(state)
-
-  const handleSubmit = async event => {
+  const [ email, setEmail ] = useState('')
+  const [ password, setPassword ] = useState('')
+   
+  const handleSubmit = event => {
     event.preventDefault();
-    const { email, password } = signin;
-
     dispatch(emailSignInStart({ email, password }));
   };
 
   const handleChange = event => {
     const { value, name } = event.target;
-
-    setSignin({ [name]: value });
+    switch(name){
+      case 'email': setEmail(value);console.log('email:', value);break;
+      case 'password': setPassword(value);console.log('password:', value);;break;
+      default: break
+    }
   };
 
-  if(currentUser){
-    Navigate('/');
-  }
+  // if(currentUser){
+  //   console.log('currentUser: ', currentUser)
+  //   navigate('/');
+  // }
 
     return (
       <SignInContainer>
-        <SignInTitle>I already have an account</SignInTitle>
-        <span>Sign in with your email and password</span>
-        <form onSubmit={() => handleSubmit()}>
+        <SignInTitle>Sign in with your email and password</SignInTitle>
           <FormInput
             name='email'
             type='email'
-            handleChange={() => handleChange()}
-            value={signin.email}
+            handleChange={(event) => handleChange(event)}
+            value={email}
             label='email'
             required
           />
           <FormInput
             name='password'
             type='password'
-            value={signin.password}
-            handleChange={() => handleChange()}
+            value={password}
+            handleChange={(event) => handleChange(event)}
             label='password'
             required
           />
           <ButtonsBarContainer>
-            <CustomButton type='submit'> Sign in </CustomButton>
+            <CustomButton onClick={(event) => handleSubmit(event)}> Sign in </CustomButton>
           </ButtonsBarContainer>
-        </form>
       </SignInContainer>
     );
   }
