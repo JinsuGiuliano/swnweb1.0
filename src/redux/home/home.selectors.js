@@ -29,6 +29,11 @@ export const selectHomeContact = createSelector(
   home => home.data.contact
 );
 
+export const selectHomeBalance = createSelector(
+  [selectHome],
+  home => home.data.balance
+);
+
 
 export const selectHomeFooter = createSelector(
   [selectHome],

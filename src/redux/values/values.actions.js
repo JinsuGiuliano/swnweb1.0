@@ -15,6 +15,21 @@ export const fetchValuesFailure = error => ({
 });
 
 //////////////////
+// FETCH Balance
+export const fetchBalanceStart = () => ({
+  type: ValuesActionTypes.FETCH_BALANCE_START
+});
+export const fetchBalanceSuccess = VALUES => ({
+  type: ValuesActionTypes.FETCH_BALANCE_SUCCESS,
+  payload: VALUES
+});
+export const fetchBalanceFailure = error => ({
+  type: ValuesActionTypes.FETCH_BALANCE_FAILURE,
+  payload: error
+});
+
+
+//////////////////
 // CREATE PROJECT
 export const createValuesStart = project => ({
     type: ValuesActionTypes.DELETE_PROJECT_START,

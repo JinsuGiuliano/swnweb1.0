@@ -8,7 +8,7 @@ import Contact from './contact/contact.component';
 import Footer from './footer/footer.component';
 import Projects from './projects/projects.component.jsx';
 import FloatingWhatsApp from 'react-floating-whatsapp';
-import { selectHomeOnEdit, selectHomeValues } from '../../redux/home/home.selectors';
+import { selectHomeOnEdit, selectHomeValues, selectHomeBalance } from '../../redux/home/home.selectors';
 import "./main.97292821.css";
 import './styles.scss'
 import ErrorBoundary from '../../ErrorBoundary'
@@ -22,11 +22,12 @@ const MainHome = ()=> {
       const dispatch = useDispatch()
       const onEdit = useSelector(selectHomeOnEdit)
       const ourValues = useSelector(selectHomeValues)
+      const ourBalances = useSelector(selectHomeBalance)
         return(
         <ErrorBoundary>  
           <div>
        
-            <Menu  onEdit={onEdit}/>
+              <Menu ourBalances={ourBalances} onEdit={onEdit}/>
           
               {
                 currentUser ?
